@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    @font-face {
+        font-family: "Amour";
+        src: url("../fonts/KZ_Mon_Amour_One.ttf") format("truetype");
+    }
+    @font-face {
+        font-family: "Matura";
+        src: url("../fonts/KZKonung-Regular.ttf") format("truetype");
+    }
+    @font-face {
+        font-family: "Inkwell";
+        src: url("../fonts/Inkwell.ttf") format("truetype");
+    }
+}
