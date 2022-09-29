@@ -99,11 +99,13 @@ class ExhibitController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Exhibit $exhibit
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy($id)
+    public function destroy(Exhibit $exhibit)
     {
-        //
+        $exhibit->delete();
+
+        return redirect()->route('exhibits.index');
     }
 }
