@@ -21,8 +21,7 @@
                         <div class="px-4 py-2">
                             <h1 class="text-lg text-center border-gray-400 border-b">{{$exhibit->{'name_'.app()->getLocale()} }}</h1>
                             <p class="py-2">
-                                {{ Illuminate\Support\Str::limit($exhibit->{'description_'.app()->getLocale()},20) }}
-{{--                                {{ substr($exhibit->{'description_'.app()->getLocale()},0,50) }} ...--}}
+                                {{ Illuminate\Support\Str::limit($exhibit->{'description_'.app()->getLocale()},50) }}
                             </p>
                             <a href="{{route('exhibit',$exhibit->id)}}" class="block underline text-right text-sm hover:text-amber-600">{{__('site.more')}}</a>
                         </div>
