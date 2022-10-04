@@ -2,3 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    @font-face {
+        font-family: "Header";
+        src: url("../fonts/Asylbek Mereke 20+Dastan.ttf") format("truetype");
+    }
+}
+

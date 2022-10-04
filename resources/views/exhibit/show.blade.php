@@ -19,9 +19,9 @@
                 <div class="rounded overflow-hidden bg-gray-200">
                     <img src="{{asset('/storage/'.$exhibit->image)}}" class="w-full" alt="">
                     <div class="px-4 py-2">
-                        <h1 class="text-lg text-center border-gray-400 border-b">{{$exhibit->{'name_'.app()->getLocale()} }}</h1>
+                        <h1 class="text-2xl font-semibold text-center border-gray-400 border-b">{{$exhibit->{'name_'.app()->getLocale()} }}</h1>
                         <p class="py-2">
-                            {{$exhibit->{'description_'.app()->getLocale()} }}
+                            {!! $exhibit->{'description_'.app()->getLocale()} !!}
                         </p>
                     </div>
                 </div>

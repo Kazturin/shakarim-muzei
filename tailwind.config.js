@@ -13,6 +13,7 @@ module.exports = {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
                 matura: ["'Mature',serif"],
+                header: ["'Header',serif"],
             },
         },
     },

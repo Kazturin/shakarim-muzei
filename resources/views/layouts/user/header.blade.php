@@ -2,9 +2,9 @@
     <div class="h-64 w-full" style="background-image: url({{asset('/img/bg-header.png')}})">
         <div class="container mx-auto h-full">
             <div class="flex flex-col h-full justify-center items-center sm:justify-between sm:flex-row">
-                <div class="">
-                    <h1 class="text-4xl text-gray-800 font-matura">{{__('site.university')}}</h1>
-                    <h1 class="text-3xl">{{__('site.museum')}}</h1>
+                <div class="font-header text-gray-500">
+                    <h1 class="text-4xl">{{__('site.university')}}</h1>
+                    <h1 class="text-3xl uppercase">{{__('site.museum')}}</h1>
                 </div>
                 <div class="h-full flex flex-col">
                     @include('partials/language_switcher')

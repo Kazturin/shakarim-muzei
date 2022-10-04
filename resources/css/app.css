@@ -4,15 +4,7 @@
 
 @layer base {
     @font-face {
-        font-family: "Amour";
-        src: url("../fonts/KZ_Mon_Amour_One.ttf") format("truetype");
-    }
-    @font-face {
-        font-family: "Matura";
-        src: url("../fonts/KZKonung-Regular.ttf") format("truetype");
-    }
-    @font-face {
-        font-family: "Inkwell";
-        src: url("../fonts/Inkwell.ttf") format("truetype");
+        font-family: "Header";
+        src: url("../../public/fonts/Asylbek Mereke 20+Dastan.ttf") format("truetype");
     }
 }
