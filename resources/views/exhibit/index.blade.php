@@ -16,7 +16,7 @@
         <div class="grow mr-4">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 ">
                 @foreach($exhibits as $exhibit)
-                    <div class="rounded overflow-hidden bg-gray-200">
+                    <div class="rounded overflow-hidden bg-gray-200  drop-shadow-lg hover:drop-shadow-2xl">
                         <img src="{{asset('/storage/'.$exhibit->image)}}" alt="{{$exhibit->{'name_'.app()->getLocale()} }}">
                         <div class="px-4 py-2">
                             <h1 class="text-lg text-center border-gray-400 border-b">{{$exhibit->{'name_'.app()->getLocale()} }}</h1>

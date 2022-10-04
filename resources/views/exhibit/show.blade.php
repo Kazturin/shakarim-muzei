@@ -31,7 +31,7 @@
                 <hr>
                 <ul class="w-40 px-4 flex flex-col mt-2 sm:w-52 md:80">
                         @foreach($exhibits as $item)
-                        <li class="mb-2">
+                        <li class="mb-2 border-b border-gray-200">
                             <a class="text-lg" href="{{route('exhibit',$item->id)}}">{{$item->{'name_'.app()->getLocale()} }}</a>
                         </li>
                         @endforeach
