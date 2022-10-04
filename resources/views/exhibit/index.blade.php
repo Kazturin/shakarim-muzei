@@ -4,13 +4,9 @@
 @section('content')
 <div class="bg-white p-10 shadow-lg">
 
-    <div class="flex">
-        <div class="grow">
-            <h1 class="text-3xl text-center font-semibold">{{__('site.exhibits')}}</h1>
+    <div class="text-center">
+            <h1 class="text-2xl text-center font-montserrat">{{__('site.exhibits')}}</h1>
             <hr class="mx-auto w-96 my-6">
-        </div>
-        <div class="w-40 sm:w-52 md:80 hidden sm:block">
-        </div>
     </div>
     <div class="flex">
         <div class="grow mr-4">

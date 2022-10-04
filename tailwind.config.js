@@ -12,8 +12,9 @@ module.exports = {
         extend: {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
-                matura: ["'Mature',serif"],
-                header: ["'Header',serif"],
+                matura: ["'Matura',serif"],
+                main : [ "'PTSerif-Regular' , sans-serif" ],
+                montserrat : [ "'Montserrat-Regular' , sans-serif" ],
             },
         },
     },

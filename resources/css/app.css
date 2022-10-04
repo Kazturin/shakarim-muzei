@@ -4,7 +4,15 @@
 
 @layer base {
     @font-face {
-        font-family: "Header";
-        src: url("../../public/fonts/Asylbek Mereke 20+Dastan.ttf") format("truetype");
+        font-family: "Matura";
+        src: url("../../public/fonts/Matura.ttf") format("truetype");
+    }
+    @font-face {
+        font-family: "PTSerif-Regular";
+        src: url("../../public/fonts/PTSerif-Regular.ttf") format("truetype");
+    }
+    @font-face {
+        font-family: "Montserrat-Regular";
+        src: url("../../public/fonts/Montserrat-Regular.ttf") format("truetype");
     }
 }
