@@ -10,7 +10,7 @@
     </div>
     <div class="flex">
         <div class="grow mr-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 ">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 ">
                 @foreach($exhibits as $exhibit)
                     <div class="rounded overflow-hidden bg-gray-200  drop-shadow-lg hover:drop-shadow-2xl">
                         <img src="{{asset('/storage/'.$exhibit->image)}}" alt="{{$exhibit->{'name_'.app()->getLocale()} }}">
@@ -28,17 +28,17 @@
                 {{$exhibits->links()}}
             </div>
         </div>
-{{--        <div class="border-amber-200 border-t pt-4 sm:border-l sm:border-t-0 sm:pt-0">--}}
-{{--            <div class="w-40 sm:w-52 md:80 px-4 mx-auto flex flex-col">--}}
-{{--                @foreach($categories as $category)--}}
-{{--                    <a class="block" href="{{route('exhibits.category',$category->id)}}">--}}
-{{--                        <x-category-button :active="$category->title==$exhibit->category->title">--}}
-{{--                            {{$category->{'title_'.app()->getLocale()} }}--}}
-{{--                        </x-category-button>--}}
-{{--                    </a>--}}
-{{--                @endforeach--}}
-{{--            </div>--}}
-{{--        </div>--}}
+        <div class="border-amber-200 border-t pt-4 sm:border-l sm:border-t-0 sm:pt-0">
+            <div class="w-40 sm:w-52 md:80 px-4 mx-auto flex flex-col">
+                @foreach($categories as $category)
+                    <a class="block" href="{{route('exhibits.category',$category->id)}}">
+                        <x-category-button :active="$category->title==$exhibit->category->title">
+                            {{$category->{'title_'.app()->getLocale()} }}
+                        </x-category-button>
+                    </a>
+                @endforeach
+            </div>
+        </div>
     </div>
 
 </div>
