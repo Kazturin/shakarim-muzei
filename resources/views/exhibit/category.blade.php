@@ -7,14 +7,9 @@
 @section('content')
     <div class="bg-white p-10 shadow-lg">
 
-        <div class="flex">
-            <div class="grow">
-                <h1 class="text-3xl text-center font-semibold">{{__('site.exhibits')}}</h1>
-                <span class="block text-md text-gray-500 text-center"></span>
-                <hr class="mx-auto w-96 my-6">
-            </div>
-            <div class="w-40 sm:w-52 md:80 hidden sm:block">
-            </div>
+        <div class="text-center">
+            <h1 class="text-3xl text-center font-montserrat">{{  $exhibit?->category->{'title_'.app()->getLocale()} }}</h1>
+            <hr class="mx-auto w-96 my-6">
         </div>
         <div class="flex flex-col sm:flex-row">
             <div class="grow mr-4">
