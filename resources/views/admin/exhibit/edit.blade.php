@@ -57,6 +57,7 @@
                             <label class="block text-sm">
                                 <span class="text-gray-700 dark:text-gray-400">Описание</span>
                                 <textarea
+                                    id="description"
                                     class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                                     placeholder="Описание"
                                     name="description_kz"
@@ -80,6 +81,7 @@
                             <label class="block text-sm">
                                 <span class="text-gray-700 dark:text-gray-400">Описание</span>
                                 <textarea
+                                    id="description-ru"
                                     class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                                     placeholder="Описание"
                                     name="description_ru"
@@ -103,6 +105,7 @@
                             <label class="block text-sm">
                                 <span class="text-gray-700 dark:text-gray-400">Описание</span>
                                 <textarea
+                                    id="description-en"
                                     class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                                     placeholder="Описание"
                                     name="description_en"
@@ -144,6 +147,49 @@
     </div>
 @endsection
 @push('scripts')
+    <script src="{{asset('/ckeditor5/ckeditor.js')}}">
+    </script>
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#description' ),{
+                ckfinder:{
+                    uploadUrl: "{{route('ckeditor.image-upload', ['_token' => csrf_token() ])}}"
+                }
+            } )
+            .then( editor => {
+                console.log('success')
+                console.log(editor)
+            })
+            .catch( error => {
+                console.error( error );
+            } );
+        ClassicEditor
+            .create( document.querySelector( '#description-ru' ),{
+                ckfinder:{
+                    uploadUrl: "{{route('ckeditor.image-upload', ['_token' => csrf_token() ])}}"
+                }
+            } )
+            .then( editor => {
+                console.log('success')
+                console.log(editor)
+            })
+            .catch( error => {
+                console.error( error );
+            } );
+        ClassicEditor
+            .create( document.querySelector( '#description-en' ),{
+                ckfinder:{
+                    uploadUrl: "{{route('ckeditor.image-upload', ['_token' => csrf_token() ])}}"
+                }
+            } )
+            .then( editor => {
+                console.log('success')
+                console.log(editor)
+            })
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
     <script>
         let tabsContainer = document.querySelector("#tabs");
 
