@@ -19,14 +19,14 @@
         <div class="flex flex-col sm:flex-row">
             <div class="grow mr-4">
                     @if(count($exhibits)>0)
-                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-2 mr-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                             @foreach($exhibits as $exhibit)
                           <div class="rounded overflow-hidden bg-gray-200">
                             <img src="{{asset('/storage/'.$exhibit->image)}}" alt="{{$exhibit->{'name_'.app()->getLocale()} }}">
                             <div class="px-4 py-2">
                                 <h1 class="text-lg text-center border-gray-400 border-b">{{$exhibit->{'name_'.app()->getLocale()} }}</h1>
                                 <p class="py-2">
-                                    {{$exhibit->{'description_'.app()->getLocale()} }}
+                                    {!! Illuminate\Support\Str::limit($exhibit->{'description_'.app()->getLocale()},50) !!}
                                 </p>
                                 <a href="{{route('exhibit',$exhibit->id)}}" class="block underline text-right text-sm">{{__('site.more')}}</a>
                             </div>
