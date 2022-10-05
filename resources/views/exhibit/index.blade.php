@@ -24,7 +24,7 @@
                     </div>
                 @endforeach
             </div>
-            <div class="mt-2">
+            <div class="mt-4">
                 {{$exhibits->links()}}
             </div>
         </div>

@@ -1,7 +1,7 @@
 <?php
 
 return[
-    'university' => 'Универстет Шакарим',
+    'university' => 'Универстет Шакарима',
     'museum' => 'Музей',
     'main_page' => 'Главная страница',
     'archive' => 'Архив',
