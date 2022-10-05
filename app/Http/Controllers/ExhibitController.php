@@ -12,7 +12,7 @@ class ExhibitController extends Controller
 
         $language = app()->getLocale();
 
-        $exhibits = Exhibit::paginate(9);
+        $exhibits = Exhibit::paginate(12);
         $categories = ExhibitCategory::all();
 
         return view('exhibit.index',compact('exhibits','categories','language'));
@@ -36,7 +36,7 @@ class ExhibitController extends Controller
     public function category($category_id){
 
         $language = app()->getLocale();
-        $exhibits = Exhibit::where('category_id',$category_id)->paginate(9);
+        $exhibits = Exhibit::where('category_id',$category_id)->paginate(12);
         $exhibit = Exhibit::where('category_id',$category_id)->first();
 
         $categories = ExhibitCategory::all();
