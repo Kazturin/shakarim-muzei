@@ -3,7 +3,7 @@
 return[
     'university' => 'Универстет Шакарима',
     'museum' => 'Музей',
-    'main_page' => 'Главная страница',
+    'main_page' => 'Главный',
     'archive' => 'Архив',
     'exhibits' => 'Экспонаты',
     'exhibit' => 'Экспонат',

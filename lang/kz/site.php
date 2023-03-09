@@ -5,7 +5,7 @@ return[
     'museum' => 'Мұражай',
     'main_page' => 'Басты бет',
     'archive' => 'Архив',
-    'exhibits' => 'Мұражай жәдігерлері',
+    'exhibits' => 'Жәдігерлер',
     'exhibit' => 'Жәдігер',
     'more' => 'Толығырақ',
     'recently_added' => 'Соңғы қосылғандар',
