@@ -3,8 +3,8 @@
         <div class="container mx-auto h-full">
             <div class="flex flex-col h-full justify-center items-center sm:justify-between sm:flex-row">
                 <div class="font-matura text-gray-600 mt-10 sm:mt-0">
-                    <h1 class="text-4xl">{{__('site.university')}}</h1>
-                    <h1 class="text-3xl uppercase">{{__('site.museum')}}</h1>
+                    <h1 class="text-2xl sm:text-4xl">{{__('site.university')}}</h1>
+                    <h1 class="text-xl sm:text-3xl uppercase">{{__('site.museum')}}</h1>
                 </div>
                 <div class="h-full flex flex-col">
                     @include('partials/language_switcher')
