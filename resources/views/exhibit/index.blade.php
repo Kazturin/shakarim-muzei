@@ -8,7 +8,7 @@
             <h1 class="text-2xl text-center font-montserrat">{{__('site.exhibits')}}</h1>
             <hr class="mx-auto w-96 my-6">
     </div>
-    <div class="flex">
+    <div class="flex flex-col sm:flex-row">
         <div class="grow mr-4">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                 @foreach($exhibits as $exhibit)
@@ -29,7 +29,7 @@
             </div>
         </div>
         <div class="border-amber-200 border-t pt-4 sm:border-l sm:border-t-0 sm:pt-0">
-            <div class="w-40 sm:w-52 md:80 px-4 mx-auto flex flex-col">
+            <div class="w-full sm:w-40 sm:w-52 md:80 px-4 mx-auto flex flex-col">
                 @foreach($categories as $category)
                     <a class="block" href="{{route('exhibits.category',$category->id)}}">
                         <x-category-button :active="$category->title==$exhibit->category->title">
