@@ -1,4 +1,4 @@
-<div class="bg-white flex items-center flex-wrap p-4">
+<div class="bg-white flex items-center flex-wrap border border-gray-200 py-3 my-2 px-5 rounded-lg">
     <ul class="flex items-center">
         <li class="inline-flex items-center">
             <a href="{{route('home')}}" class="text-gray-600 hover:text-amber-500">
@@ -15,7 +15,7 @@
                 @break
             @endif
         <li class="inline-flex items-center">
-            <a href="{{route($link['url'])}}" class="text-gray-600 hover:text-amber-600">
+            <a href="{{$link['url']}}" class="text-gray-600 hover:text-amber-600">
                 {{$link['label']}}
             </a>
             <span class="mx-2 h-auto text-gray-400 font-medium">/</span>

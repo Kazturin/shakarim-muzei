@@ -9,6 +9,9 @@ return[
     'exhibit' => 'Жәдігер',
     'more' => 'Толығырақ',
     'recently_added' => 'Соңғы қосылғандар',
-    'not_found_exhibits' => 'Бұл категорияда экспонаттар табылмады'
+    'not_found_exhibits' => 'Бұл категорияда экспонаттар табылмады',
+    'history' => 'Музей тарихы',
+    'nothing_found' => 'Ештеңе табылмады',
+    'virtual_tour' => 'Тур'
 
 ];

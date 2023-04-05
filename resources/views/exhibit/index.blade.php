@@ -29,7 +29,7 @@
             </div>
         </div>
         <div class="border-amber-200 border-t pt-4 sm:border-l sm:border-t-0 sm:pt-0">
-            <div class="w-full sm:w-40 sm:w-52 md:80 px-4 mx-auto flex flex-col">
+            <div class="w-full  sm:w-52 md:80 px-4 mx-auto flex flex-col">
                 @foreach($categories as $category)
                     <a class="block" href="{{route('exhibits.category',$category->id)}}">
                         <x-category-button :active="$category->title==$exhibit->category->title">
