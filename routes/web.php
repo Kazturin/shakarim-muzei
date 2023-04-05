@@ -20,7 +20,7 @@ Route::get('/exhibits', [\App\Http\Controllers\ExhibitController::class,'index']
 Route::get('/exhibit/{exhibit}', [\App\Http\Controllers\ExhibitController::class,'show'])->name('exhibit');
 Route::get('/exhibits/category/{category_id}', [\App\Http\Controllers\ExhibitController::class,'category'])->name('exhibits.category');
 Route::get('/virtual-tour', [\App\Http\Controllers\SiteController::class,'virtualTour'])->name('virtualTour');
-Route::get('/{faculty_id?}', [\App\Http\Controllers\SiteController::class,'index'])->name('home');
+
 
 Route::post('language', function (Request $request) {
 //dd($request->locale);
@@ -44,3 +44,5 @@ Route::group(['middleware' => ['auth']], function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::get('/{faculty_id?}', [\App\Http\Controllers\SiteController::class,'index'])->name('home');

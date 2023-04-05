@@ -22,5 +22,6 @@ class SiteController extends Controller
     public function virtualTour(){
 
         return view('site.virtual-tour');
+
     }
 }
