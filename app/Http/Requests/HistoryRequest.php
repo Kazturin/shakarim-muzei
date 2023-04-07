@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class FacultyHistoryRequest extends FormRequest
+class HistoryRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -30,7 +30,7 @@ class FacultyHistoryRequest extends FormRequest
             'content_ru' => 'nullable|string',
             'title_en' => 'nullable|string',
             'content_en' => 'nullable|string',
-            'faculty_id' => 'required',
+            'category_id' => 'required',
         ];
     }
 }

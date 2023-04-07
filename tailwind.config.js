@@ -13,8 +13,8 @@ module.exports = {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
                 matura: ["'Matura',serif"],
-                main : [ "'PTSerif-Regular' , sans-serif" ],
-                montserrat : [ "'Montserrat-Regular' , sans-serif" ],
+                main : ["'PTSerif-Regular',sans-serif"],
+                montserrat : ["'Montserrat-Regular',sans-serif"],
             },
         },
     },

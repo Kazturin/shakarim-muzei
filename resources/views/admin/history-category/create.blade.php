@@ -2,7 +2,7 @@
 @section('content')
 
     <div class="my-2">
-        <x-breadcrumbs :links="[['url'=>route('faculty.index'),'label'=>'Факультеты'],'Добавить факультет']"></x-breadcrumbs>
+        <x-breadcrumbs :links="[['url'=>route('history-category.index'),'label'=>'Категории истории'],'Добавить категорию']"></x-breadcrumbs>
     </div>
 
     <div
@@ -19,36 +19,49 @@
             </div>
         @endif
 
-        <form action="{{ route('faculty.store') }}" method="POST">
+        <form action="{{ route('history-category.store') }}" method="POST">
             @csrf
             @method('post')
             <div class="my-2">
                 <label class="block text-sm">
-                    <span class="text-gray-700 dark:text-gray-400">Факультет(kz)</span>
+                    <span class="text-gray-700 dark:text-gray-400">Категория(kz)</span>
                     <input
                         class="block w-full rounded border-gray-300 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                        placeholder="Факультет"
+                        placeholder="Категория"
                         name="name_kz"
                     />
                 </label>
             </div>
             <div class="my-2">
                 <label class="block text-sm">
-                    <span class="text-gray-700 dark:text-gray-400">Факультет(ru)</span>
+                    <span class="text-gray-700 dark:text-gray-400">Категория(ru)</span>
                     <input
                         class="block w-full rounded border-gray-300 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                        placeholder="Факультет"
+                        placeholder="Категория"
                         name="name_ru"
                     />
                 </label>
             </div>
             <div class="my-2">
                 <label class="block text-sm">
-                    <span class="text-gray-700 dark:text-gray-400">Факультет(en)</span>
+                    <span class="text-gray-700 dark:text-gray-400">Категория(en)</span>
                     <input
                         class="block w-full rounded border-gray-300 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                        placeholder="Факультет"
+                        placeholder="Категория"
                         name="name_en"
+                    />
+                </label>
+            </div>
+
+            <div class="my-2">
+                <label class="block text-sm">
+                    <span class="text-gray-700 dark:text-gray-400">Сортировка</span>
+                    <input
+                        class="block w-32 rounded border-gray-300 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                        type="number"
+                        min="0"
+                        step="1"
+                        name="sort"
                     />
                 </label>
             </div>

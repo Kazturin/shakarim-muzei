@@ -1,6 +1,6 @@
 @extends('../layouts.admin.main')
 @section('content')
-    <x-breadcrumbs :homeUrl="['url'=>route('faculty.index')]" :links="[['url'=>route('faculty.index'),'label'=>'Факультеты'],['label'=>'Редактировать факультет']]"></x-breadcrumbs>
+    <x-breadcrumbs :links="[['url'=>route('history-category.index'),'label'=>'Категории истории'],'Редактировать категорию']"></x-breadcrumbs>
 
     <div
         class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800"
@@ -16,55 +16,55 @@
             </div>
         @endif
 
-        <form action="{{ route('faculty.update',$faculty->id) }}" method="POST">
+        <form action="{{ route('history-category.update',$historyCategory->id) }}" method="POST">
             @csrf
             @method('patch')
             <div class="my-2">
                 <label class="block text-sm">
-                    <span class="text-gray-700 dark:text-gray-400">Факультет(kz)</span>
+                    <span class="text-gray-700 dark:text-gray-400">Категория(kz)</span>
                     <input
                         class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                        placeholder="Факультет"
+                        placeholder="Категория"
                         name="name_kz"
-                        value="{{$faculty->name_kz}}"
+                        value="{{$historyCategory->name_kz}}"
                     />
                 </label>
             </div>
             <div class="my-2">
                 <label class="block text-sm">
-                    <span class="text-gray-700 dark:text-gray-400">Факультет(ru)</span>
+                    <span class="text-gray-700 dark:text-gray-400">Категория(ru)</span>
                     <input
                         class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                        placeholder="Факультет"
+                        placeholder="Категория"
                         name="name_ru"
-                        value="{{$faculty->name_ru}}"
+                        value="{{$historyCategory->name_ru}}"
                     />
                 </label>
             </div>
             <div class="my-2">
                 <label class="block text-sm">
-                    <span class="text-gray-700 dark:text-gray-400">Факультет(en)</span>
+                    <span class="text-gray-700 dark:text-gray-400">Категория(en)</span>
                     <input
                         class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                        placeholder="Факультет"
+                        placeholder="Категория"
                         name="name_en"
-                        value="{{$faculty->name_en}}"
+                        value="{{$historyCategory->name_en}}"
                     />
                 </label>
             </div>
             <div class="my-2">
                 <label
-                    for="ais_id"
+                    for="sort"
                     class="block text-sm font-medium text-gray-700"
-                >Ais id</label>
+                >Сортировка</label>
                 <input
                     class="w-full rounded border-gray-300 mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                    id="ais_id"
-                    name="ais_id"
+                    id="sort"
+                    name="sort"
                     type="number"
-                    min="1"
+                    min="0"
                     step="1"
-                    value="{{$faculty->ais_id}}"
+                    value="{{$historyCategory->sort}}"
                 />
             </div>
             <div class="px-4 py-3 text-right sm:px-6">

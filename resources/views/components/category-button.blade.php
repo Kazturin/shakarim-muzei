@@ -1,6 +1,6 @@
 @props(['active'=>false])
 <button @class(
-        ['bg-amber-700'=>$active,
+        ['bg-amber-700 shadow-lg'=>$active,
          'bg-amber-600'=>!$active,
          'mb-2',
          'p-2',

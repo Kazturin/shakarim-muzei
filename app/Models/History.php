@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class FacultyHistory extends Model
+class History extends Model
 {
     use HasFactory;
 
@@ -16,10 +16,10 @@ class FacultyHistory extends Model
         'content_kz',
         'content_ru',
         'content_en',
-        'faculty_id'
+        'category_id'
     ];
 
-    public function faculty(){
-        return $this->belongsTo(Faculty::class);
+    public function category(){
+        return $this->belongsTo(HistoryCategory::class,'category_id');
     }
 }

@@ -3,17 +3,17 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Faculty;
+use App\Models\HistoryCategory;
 use Illuminate\Http\Request;
 
-class FacultyController extends Controller
+class HistoryCategoryController extends Controller
 {
     public function index()
     {
 
-        $data = Faculty::all();
+        $data = HistoryCategory::all();
 
-        return view('admin.faculty.index',['data'=>$data]);
+        return view('admin.history-category.index',['data'=>$data]);
     }
 
     /**
@@ -24,7 +24,7 @@ class FacultyController extends Controller
     public function create()
     {
 
-        return view('admin.faculty.create');
+        return view('admin.history-category.create');
     }
 
     /**
@@ -39,11 +39,12 @@ class FacultyController extends Controller
             'name_kz' => ['required', 'string', 'max:255'],
             'name_ru' => ['required', 'string', 'max:255'],
             'name_en' => ['required', 'string', 'max:255'],
+            'sort' => 'integer',
         ]);
 
-        Faculty::create($data);
+        HistoryCategory::create($data);
 
-        return redirect()->route('faculty.index');
+        return redirect()->route('history-category.index');
     }
 
     /**
@@ -60,45 +61,46 @@ class FacultyController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  Faculty $faculty
+     * @param  HistoryCategory $historyCategory
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function edit(Faculty $faculty)
+    public function edit(HistoryCategory $historyCategory)
     {
-        return view('admin.faculty.edit',['faculty'=>$faculty]);
+        return view('admin.history-category.edit',['historyCategory'=>$historyCategory]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  Faculty $faculty
+     * @param  HistoryCategory $historyCategory
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, Faculty $faculty)
+    public function update(Request $request, HistoryCategory $historyCategory)
     {
         $data = $request->validate([
             'name_kz' => ['required', 'string', 'max:255'],
             'name_ru' => ['required', 'string', 'max:255'],
             'name_en' => ['required', 'string', 'max:255'],
+            'sort' => 'integer',
         ]);
 
-        $faculty->update($data);
+        $historyCategory->update($data);
 
-        return redirect()->route('faculty.index');
+        return redirect()->route('history-category.index');
 
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  Faculty $faculty
+     * @param  HistoryCategory $faculty
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy(Faculty $faculty)
+    public function destroy(HistoryCategory $historyCategory)
     {
-        $faculty->delete();
+        $historyCategory->delete();
 
-        return redirect()->route('faculty.index');
+        return redirect()->route('history-category.index');
     }
 }

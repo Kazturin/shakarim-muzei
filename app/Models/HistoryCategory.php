@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Faculty extends Model
+class HistoryCategory extends Model
 {
     use HasFactory;
 
@@ -16,5 +16,6 @@ class Faculty extends Model
         'name_kz',
         'name_ru',
         'name_en',
+        'sort'
     ];
 }

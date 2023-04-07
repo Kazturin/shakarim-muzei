@@ -7,7 +7,7 @@
             История музея
         </h2>
         <div class="px-6 my-6">
-            <a href="{{route('faculty-history.create')}}" class="flex items-center justify-between w-full px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
+            <a href="{{route('history.create')}}" class="flex items-center justify-between w-full px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
                 Добавить
                 <span class="ml-2" aria-hidden="true">+</span>
             </a>
@@ -22,8 +22,7 @@
                     class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"
                 >
                     <th class="px-4 py-3">Заголовок</th>
-                    <th class="px-4 py-3">Content</th>
-                    <th class="px-4 py-3">Факультет</th>
+                    <th class="px-4 py-3">Категория</th>
                     <th class="px-4 py-3">Добавлен</th>
                 </tr>
                 </thead>
@@ -36,17 +35,14 @@
                         {{$item->title_kz}}
                     </td>
                     <td class="px-4 py-3 text-sm">
-                        {{$item->content_kz}}
-                    </td>
-                    <td class="px-4 py-3 text-sm">
-                        {{$item->faculty->name_kz}}
+                        {{$item->category->name_kz}}
                     </td>
                     <td class="px-4 py-3 text-sm">
                         {{$item->created_at}}
                     </td>
                     <td class="px-4 py-3">
                         <div class="flex items-center space-x-4 text-sm">
-                            <a href="{{route('faculty-history.edit',$item->id)}}"
+                            <a href="{{route('history.edit',$item->id)}}"
                                 class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray"
                                 aria-label="Edit"
                             >
@@ -61,7 +57,7 @@
                                     ></path>
                                 </svg>
                             </a>
-                            <form action="{{ route('faculty-history.destroy',$item->id) }}" method="post">
+                            <form action="{{ route('history.destroy',$item->id) }}" method="post">
                                 @csrf
                                 @method('delete')
                             <button

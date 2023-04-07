@@ -1,7 +1,7 @@
 @extends('../layouts.admin.main')
 @section('content')
     <div class="my-2">
-        <x-breadcrumbs :links="[['url'=>route('faculty-history.index'),'label'=>'История музея'],'Редактировать']"></x-breadcrumbs>
+        <x-breadcrumbs :links="[['url'=>route('history.index'),'label'=>'История музея'],'Добавить']"></x-breadcrumbs>
     </div>
     <div
         class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800"
@@ -17,9 +17,9 @@
             </div>
         @endif
 
-        <form action="{{ route('faculty-history.update', $facultyHistory->id) }}" method="POST">
+        <form action="{{ route('history.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
-            @method('patch')
+            @method('post')
             <div>
                 <ul id="tabs" class="inline-flex pt-2 px-1 w-full border-b">
                     <li class="bg-white px-4 text-gray-800 font-semibold py-2 rounded-t border-t border-r border-l -mb-px"><a id="default-tab" href="#kz">KZ</a></li>
@@ -30,16 +30,16 @@
                 <div class="my-2">
                     <label class="block mt-4 text-sm">
                 <span class="text-gray-700 dark:text-gray-400">
-                  Факультет
+                  Категория
                 </span>
                         <select
                             required
-                            name="faculty_id"
+                            name="category_id"
                             class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
                         >
                             <option value="">Выберите</option>
-                            @foreach($faculties as $faculty)
-                                <option value="{{$faculty->id}}" {{ $faculty->id==$facultyHistory->faculty_id? 'selected':null }}>{{$faculty->name_kz}}</option>
+                            @foreach($categories as $category)
+                                <option value="{{$category->id}}">{{$category->name_kz}}</option>
                             @endforeach
                         </select>
                     </label>
@@ -49,12 +49,11 @@
                     <div id="kz">
                         <div class="my-2">
                             <label class="block text-sm">
-                                <span class="text-gray-700 dark:text-gray-400">Title</span>
+                                <span class="text-gray-700 dark:text-gray-400">Заголовок</span>
                                 <input
                                     class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                    placeholder="Name"
+                                    placeholder="Заголовок"
                                     name="title_kz"
-                                    value="{{$facultyHistory->title_kz}}"
                                 />
                             </label>
                         </div>
@@ -66,7 +65,7 @@
                                     class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                                     placeholder="Content"
                                     name="content_kz">
-                                    {{trim($facultyHistory->content_kz)}}
+
                                 </textarea>
                             </label>
                         </div>
@@ -74,12 +73,11 @@
                     <div id="ru" class="hidden">
                         <div class="my-2">
                             <label class="block text-sm">
-                                <span class="text-gray-700 dark:text-gray-400">Title</span>
+                                <span class="text-gray-700 dark:text-gray-400">Заголовок(ru)</span>
                                 <input
                                     class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                    placeholder="Name"
+                                    placeholder="Заголовок"
                                     name="title_ru"
-                                    value="{{$facultyHistory->title_ru}}"
                                 />
                             </label>
                         </div>
@@ -91,7 +89,7 @@
                                     class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                                     placeholder="Content"
                                     name="content_ru">
-                                    {{trim($facultyHistory->content_ru)}}
+
                                 </textarea>
                             </label>
                         </div>
@@ -99,12 +97,11 @@
                     <div id="en" class="hidden">
                         <div class="my-2">
                             <label class="block text-sm">
-                                <span class="text-gray-700 dark:text-gray-400">Title</span>
+                                <span class="text-gray-700 dark:text-gray-400">Заголовок(en)</span>
                                 <input
                                     class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                                    placeholder="Name"
+                                    placeholder="Заголовок"
                                     name="title_en"
-                                    value="{{$facultyHistory->title_en}}"
                                 />
                             </label>
                         </div>
@@ -116,7 +113,7 @@
                                     class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                                     placeholder="Content"
                                     name="content_en">
-                                    {{trim($facultyHistory->content_en)}}
+
                                 </textarea>
                             </label>
                         </div>
@@ -124,9 +121,10 @@
                 </div>
 
             </div>
+
             <div class="px-4 py-3 text-right sm:px-6">
                 <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                    Изменить
+                    Добавить
                 </button>
             </div>
         </form>
@@ -207,4 +205,3 @@
 
     </script>
 @endpush
-

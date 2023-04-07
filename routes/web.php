@@ -37,12 +37,12 @@ Route::group(['middleware' => ['auth']], function () {
         Route::resource('welcomes',\App\Http\Controllers\admin\WelcomeController::class);
         Route::resource('exhibit-categories',\App\Http\Controllers\admin\ExhibitCategoryController::class);
         Route::resource('exhibits',\App\Http\Controllers\admin\ExhibitController::class);
-        Route::resource('faculty',\App\Http\Controllers\admin\FacultyController::class);
-        Route::resource('faculty-history',\App\Http\Controllers\admin\FacultyHistoryController::class);
+        Route::resource('history-category',\App\Http\Controllers\admin\HistoryCategoryController::class);
+        Route::resource('history',\App\Http\Controllers\admin\HistoryController::class);
         Route::post('ckeditor/upload', [\App\Http\Controllers\CKEditorController::class,'upload'])->name('ckeditor.image-upload');
     });
 });
 
 require __DIR__.'/auth.php';
 
-Route::get('/{faculty_id?}', [\App\Http\Controllers\SiteController::class,'index'])->name('home');
+Route::get('/{category_id?}', [\App\Http\Controllers\SiteController::class,'index'])->name('home');

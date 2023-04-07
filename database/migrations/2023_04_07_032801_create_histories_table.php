@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('faculty_histories', function (Blueprint $table) {
+        Schema::create('histories', function (Blueprint $table) {
             $table->id();
             $table->string('title_kz',255)->nullable();
             $table->text('content_kz');
@@ -21,9 +21,8 @@ return new class extends Migration
             $table->text('content_ru');
             $table->string('title_en',255)->nullable();
             $table->text('content_en');
-            $table->foreignIdFor(\App\Models\HistoryCategory::class, 'faculty_id');
+            $table->foreignIdFor(\App\Models\HistoryCategory::class, 'category_id');
             $table->timestamps();
-
         });
     }
 
@@ -34,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('faculty_histories');
+        Schema::dropIfExists('histories');
     }
 };
