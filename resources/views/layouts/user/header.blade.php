@@ -1,5 +1,5 @@
 <div class="h-64">
-    <div class="h-64 w-full" style="background-image: url({{asset('/img/bg-header.png')}})">
+    <div class="h-64 w-full" style="background-image: url({{asset('/img/bg-header.jpg')}})">
         <div class="container mx-auto h-full">
             <div class="flex flex-col h-full justify-center items-center sm:justify-between sm:flex-row">
                 <div class="font-matura text-gray-600 mt-10 sm:mt-0">

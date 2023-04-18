@@ -9,7 +9,7 @@
 
         <div class="flex">
             <div class="grow">
-                <h1 class="font-montserrat text-lg md:text-xl text-center font-semibold">{{ $history?->{'title_'.app()->getLocale()} }}</h1>
+                <h1 class="font-montserrat text-lg md:text-xl text-center font-semibold uppercase">{{ $history?->{'title_'.app()->getLocale()} }}</h1>
                 <hr class="mx-auto w-96 my-6">
             </div>
             <div class="sm:w-52 md:w-80 hidden sm:block">
