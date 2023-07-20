@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="flex flex-col sm:flex-row">
-            <div class="grow mr-4 mb-4">
+            <div class="w-4/5 mr-4 mb-4">
                 <div class="rounded overflow-hidden bg-gray-200">
                     <img src="{{asset('/storage/'.$exhibit->image)}}" class="w-full" alt="">
                     <div class="px-4 py-2">
@@ -26,16 +26,8 @@
                     </div>
                 </div>
             </div>
-            <div class="border-amber-200 border-t pt-4 sm:border-l sm:border-t-0 sm:pt-0">
-                <h1 class="text-xl px-2 font-semibold m-2">{{__('site.recently_added')}}</h1>
-                <hr>
-                <ul class="w-40 px-4 flex flex-col mt-2 sm:w-52 md:80">
-                        @foreach($exhibits as $item)
-                        <li class="mb-2 border-b border-gray-200">
-                            <a class="text-lg" href="{{route('exhibit',$item->id)}}">{{$item->{'name_'.app()->getLocale()} }}</a>
-                        </li>
-                        @endforeach
-                </ul>
+            <div class="w-1/5">
+                <x-last-exhibits/>
             </div>
         </div>
 

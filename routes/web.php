@@ -20,6 +20,7 @@ Route::get('/exhibits', [\App\Http\Controllers\ExhibitController::class,'index']
 Route::get('/exhibit/{exhibit}', [\App\Http\Controllers\ExhibitController::class,'show'])->name('exhibit');
 Route::get('/exhibits/category/{category_id}', [\App\Http\Controllers\ExhibitController::class,'category'])->name('exhibits.category');
 Route::get('/virtual-tour', [\App\Http\Controllers\SiteController::class,'virtualTour'])->name('virtualTour');
+Route::get('/archives',[\App\Http\Controllers\SiteController::class,'archives'])->name('archives');
 
 
 Route::post('language', function (Request $request) {
@@ -39,6 +40,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::resource('exhibits',\App\Http\Controllers\admin\ExhibitController::class);
         Route::resource('history-category',\App\Http\Controllers\admin\HistoryCategoryController::class);
         Route::resource('history',\App\Http\Controllers\admin\HistoryController::class);
+        Route::resource('archives',\App\Http\Controllers\admin\ArchiveController::class);
         Route::post('ckeditor/upload', [\App\Http\Controllers\CKEditorController::class,'upload'])->name('ckeditor.image-upload');
     });
 });

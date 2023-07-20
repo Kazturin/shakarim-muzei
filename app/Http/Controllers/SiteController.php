@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Archive;
 use App\Models\HistoryCategory;
 use App\Models\History;
 use App\Models\Welcome;
@@ -23,6 +24,14 @@ class SiteController extends Controller
     public function virtualTour(){
 
         return view('site.virtual-tour');
+
+    }
+
+    public function archives(){
+
+        $archives = Archive::all();
+
+        return view('site.archive',compact('archives'));
 
     }
 }
