@@ -1,6 +1,6 @@
 @extends('../layouts.user.main',[
     'links'=>[
-           ['label'=>__('site.exhibits'),'url'=>'exhibits'],
+           ['label'=>__('site.exhibits'),'url'=>'/exhibits'],
             $exhibit->{'name_'.app()->getLocale()}
        ]
 ])
